@@ -1,0 +1,129 @@
+/* ===== Basic ===== */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+  background: #ffe6f0;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  overflow: hidden;
+}
+
+#loveText {
+  margin-top: 20px;
+  font-size: 2rem;
+  color: #e17055;
+}
+
+button {
+  margin: 1rem auto;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 12px;
+  background: #ff7675;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s;
+}
+button:hover {
+  background: #d63031;
+}
+
+/* ===== Garden ===== */
+.garden {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 120px);
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: end;
+  gap: 20px;
+  padding: 10px;
+  overflow: hidden;
+}
+
+/* ===== Sunflower ===== */
+.sunflower {
+  position: relative;
+  width: 120px;
+  height: 180px;
+  animation: grow 1s forwards;
+  opacity: 0;
+  transform: scale(0.3) translateY(100px);
+}
+
+/* batang */
+.stem {
+  width: 10px;
+  height: 100px;
+  background: #27ae60;
+  margin: 0 auto;
+  position: relative;
+  top: 80px;
+  border-radius: 5px;
+}
+
+/* daun */
+.leaf {
+  width: 25px;
+  height: 25px;
+  background: #2ecc71;
+  position: absolute;
+  border-radius: 50% 50% 0 50%;
+  top: 40px;
+}
+.leaf.left { left: -25px; transform: rotate(-30deg); }
+.leaf.right { right: -25px; transform: rotate(30deg); }
+
+/* kepala bunga */
+.flower {
+  width: 100px;
+  height: 100px;
+  background: transparent;
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: bloom 1s ease-out forwards;
+  opacity: 0;
+}
+
+/* kelopak */
+.petal {
+  width: 35px;
+  height: 60px;
+  background: #f1c40f;
+  border-radius: 50%;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform-origin: bottom center;
+}
+
+/* tengah bunga */
+.center {
+  width: 40px;
+  height: 40px;
+  background: #6d4c41;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+/* Animasi tumbuh */
+@keyframes grow {
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+/* Animasi mekarnya bunga */
+@keyframes bloom {
+  to {
+    opacity: 1;
+    transform: translateX(-50%) scale(1.05);
+  }
+}
